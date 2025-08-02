@@ -1,0 +1,288 @@
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.about-header h1 {
+  font-size: 2.5rem;
+  color: #081b29;
+  margin-bottom: 10px;
+}
+
+.about-header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 60px;
+  align-items: center;
+}
+
+.about-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  color: #081b29;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.about-content h2:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 50px;
+  height: 3px;
+  background-color: #0ef;
+}
+
+.about-content p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team-section {
+  margin-bottom: 60px;
+}
+
+.team-section h2 {
+  font-size: 2rem;
+  color: #081b29;
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.team-section h2:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 50px;
+  height: 3px;
+  background-color: #0ef;
+  transform: translateX(-50%);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.team-member {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+}
+
+.member-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-member h3 {
+  margin: 15px 0 5px;
+  color: #081b29;
+}
+
+.member-role {
+  color: #0ef;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.member-bio {
+  padding: 0 20px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.vision-section {
+  background-color: #f9f9f9;
+  padding: 60px 40px;
+  border-radius: 10px;
+  margin-bottom: 60px;
+}
+
+.vision-content h2 {
+  font-size: 2rem;
+  color: #081b29;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.vision-content h2:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 50px;
+  height: 3px;
+  background-color: #0ef;
+}
+
+.vision-content p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #444;
+  max-width: 800px;
+}
+
+.values-section {
+  margin-bottom: 60px;
+}
+
+.values-section h2 {
+  font-size: 2rem;
+  color: #081b29;
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.values-section h2:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 50px;
+  height: 3px;
+  background-color: #0ef;
+  transform: translateX(-50%);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.value-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.value-card h3 {
+  color: #081b29;
+  margin-bottom: 10px;
+}
+
+.value-card p {
+  color: #666;
+}
+
+.contact-section {
+  background-color: #081b29;
+  padding: 60px 40px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.contact-section h2:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 50px;
+  height: 3px;
+  background-color: #0ef;
+  transform: translateX(-50%);
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.contact-item {
+  text-align: center;
+}
+
+.contact-item h3 {
+  color: #0ef;
+  margin-bottom: 15px;
+}
+
+.contact-item p {
+  margin-bottom: 5px;
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+  }
+
+  .about-content h2:after,
+  .vision-content h2:after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .about-content,
+  .vision-content {
+    text-align: center;
+  }
+}

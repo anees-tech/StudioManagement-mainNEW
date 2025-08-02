@@ -1,0 +1,125 @@
+.admin-users {
+  padding: 0 0 24px;
+}
+
+.admin-table-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th {
+  text-align: left;
+  padding: 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #6b7280;
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-table td {
+  padding: 16px;
+  font-size: 0.9rem;
+  color: #374151;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.role-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.role-badge.admin {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.role-badge.photographer {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+.role-badge.client {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-button,
+.delete-button,
+.view-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.edit-button {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+.edit-button:hover {
+  background-color: #bfdbfe;
+}
+
+.delete-button {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.delete-button:hover {
+  background-color: #fecaca;
+}
+
+.view-button {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.view-button:hover {
+  background-color: #e5e7eb;
+}
+
+@media (max-width: 992px) {
+  .admin-table {
+    min-width: 800px;
+  }
+
+  .admin-table-container {
+    overflow-x: auto;
+  }
+}

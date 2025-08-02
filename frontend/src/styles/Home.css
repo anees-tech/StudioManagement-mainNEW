@@ -1,0 +1,303 @@
+.home-container {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 80vh;
+  background: linear-gradient(#587b7f41), url("img/main.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 0 20px;
+  /* margin-right: -60px; */
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  word-spacing: 2px;
+  margin-left: 200px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  margin-left: 200px
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #587b7f;
+  border-radius: 30px;
+  font-size: 1rem;
+  
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 0  25px #587b7f ;
+  margin-left: 170px;
+}
+
+.cta-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #587b7f, #081b29);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.cta-button:hover:before {
+  width: 100%;
+}
+
+/* Services Section */
+.services-section {
+  padding: 80px 20px;
+  background-color: #587b7f;
+  text-align: center;
+}
+
+.services-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #081b29;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: #d3d0cb;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #081b29;
+}
+
+.service-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Featured Photographers Section */
+.featured-section {
+  padding: 80px 20px;
+  background-color: #081b29;
+  text-align: center;
+}
+
+.featured-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.photographer-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.photographer-card:hover {
+  transform: translateY(-10px);
+}
+
+.photographer-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.photographer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.photographer-card:hover .photographer-image img {
+  transform: scale(1.1);
+}
+
+.photographer-info {
+  padding: 20px;
+  color: #fff;
+}
+
+.photographer-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.specialization {
+  color: #0ef;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.rating {
+  color: #ffd700;
+  margin-bottom: 15px;
+}
+
+.rating span {
+  color: #ccc;
+  margin-left: 5px;
+  font-size: 0.9rem;
+}
+
+.book-button {
+  display: inline-block;
+  padding: 8px 20px;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #0ef;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.book-button:hover {
+  background: #0ef;
+  color: #081b29;
+}
+
+.loading,
+.no-data {
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 40px 0;
+}
+
+.view-all {
+  margin-top: 40px;
+}
+
+.view-all-button {
+  display: inline-block;
+  padding: 10px 25px;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #587b7f;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.view-all-button:hover {
+  background: #587b7f;
+  color: #081b29;
+  
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: 80px 20px;
+  background-color: #587b7f;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #081b29;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.testimonial-author {
+  font-weight: 600;
+  color: #081b29;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .services-section h2,
+  .featured-section h2,
+  .testimonials-section h2 {
+    font-size: 2rem;
+  }
+}
