@@ -219,7 +219,7 @@
   color: #6b7280;
 }
 
-.modal-overlay {
+.admin-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -232,7 +232,7 @@
   z-index: 1000;
 }
 
-.modal {
+.admin-modal {
   background-color: white;
   border-radius: 8px;
   width: 90%;
@@ -242,7 +242,7 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-.modal-header {
+.admin-modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -250,14 +250,14 @@
   border-bottom: 1px solid #e5e7eb;
 }
 
-.modal-header h2 {
+.admin-modal-header h2 {
   font-size: 1.5rem;
   color: #111827;
   font-weight: 600;
   margin: 0;
 }
 
-.close-button {
+.admin-close-button {
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -265,24 +265,24 @@
   color: #6b7280;
 }
 
-.modal form {
+.admin-modal form {
   padding: 24px;
 }
 
-.form-group {
+.admin-form-group {
   margin-bottom: 16px;
 }
 
-.form-group label {
+.admin-form-group label {
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
   color: #374151;
 }
 
-.form-group input,
-.form-group textarea,
-.form-group select {
+.admin-form-group input,
+.admin-form-group textarea,
+.admin-form-group select {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid #e5e7eb;
@@ -290,26 +290,26 @@
   font-size: 0.9rem;
 }
 
-.form-group textarea {
+.admin-form-group textarea {
   resize: vertical;
   min-height: 100px;
 }
 
-.form-group small {
+.admin-form-group small {
   display: block;
   margin-top: 4px;
   color: #6b7280;
   font-size: 0.8rem;
 }
 
-.form-actions {
+.admin-form-actions {
   display: flex;
   justify-content: flex-end;
   gap: 12px;
   margin-top: 24px;
 }
 
-.cancel-button {
+.admin-cancel-button {
   background-color: #f3f4f6;
   color: #374151;
   border: none;

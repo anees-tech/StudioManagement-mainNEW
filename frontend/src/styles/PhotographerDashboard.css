@@ -1462,8 +1462,8 @@
   transform: translateY(-1px);
 }
 
-/* Modal Styles */
-.modal-overlay {
+/* Photographer Modal Styles */
+.photographer-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -1477,7 +1477,7 @@
   padding: 20px;
 }
 
-.modal {
+.photographer-modal {
   background: white;
   border-radius: 20px;
   max-width: 600px;
@@ -1485,10 +1485,10 @@
   max-height: 80vh;
   overflow-y: auto;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-  animation: modalSlideIn 0.3s ease-out;
+  animation: photographerModalSlideIn 0.3s ease-out;
 }
 
-@keyframes modalSlideIn {
+@keyframes photographerModalSlideIn {
   from {
     opacity: 0;
     transform: translateY(-50px);
@@ -1499,7 +1499,7 @@
   }
 }
 
-.modal-header {
+.photographer-modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1507,14 +1507,14 @@
   border-bottom: 1px solid #e2e8f0;
 }
 
-.modal-header h3 {
+.photographer-modal-header h3 {
   font-size: 1.5rem;
   font-weight: 600;
   color: #334155;
   margin: 0;
 }
 
-.close-btn {
+.photographer-close-btn {
   background: none;
   border: none;
   font-size: 1.2rem;
@@ -1524,19 +1524,19 @@
   transition: all 0.3s ease;
 }
 
-.close-btn:hover {
+.photographer-close-btn:hover {
   background: #f1f5f9;
   transform: scale(1.1);
 }
 
-.modal-form {
+.photographer-modal-form {
   padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.modal-actions {
+.photographer-modal-actions {
   display: flex;
   gap: 1rem;
   justify-content: flex-end;

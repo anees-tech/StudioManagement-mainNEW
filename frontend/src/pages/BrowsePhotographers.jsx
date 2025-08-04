@@ -124,8 +124,8 @@ const BrowsePhotographers = () => {
 
       <div className="filters-section">
         <div className="filters-container">
-          <div className="search-bar">
-            <div className="search-input-wrapper">
+          <div className="filter-controls">
+            <div className="search-container">
               <input
                 type="text"
                 name="search"
@@ -136,12 +136,10 @@ const BrowsePhotographers = () => {
               />
               <div className="search-icon">🔍</div>
             </div>
-          </div>
 
-          <div className="filter-controls">
             <div className="filter-group">
               <label>Service</label>
-              <select name="service" value={filters.service} onChange={handleFilterChange}>
+              <select name="service" value={filters.service} onChange={handleFilterChange} className="filter-select">
                 <option value="">All Services</option>
                 <option value="Wedding Photography">Wedding Photography</option>
                 <option value="Portrait Photography">Portrait Photography</option>
@@ -154,7 +152,7 @@ const BrowsePhotographers = () => {
 
             <div className="filter-group">
               <label>Specialization</label>
-              <select name="specialization" value={filters.specialization} onChange={handleFilterChange}>
+              <select name="specialization" value={filters.specialization} onChange={handleFilterChange} className="filter-select">
                 <option value="">All Specializations</option>
                 <option value="Wedding">Wedding</option>
                 <option value="Portrait">Portrait</option>
@@ -167,7 +165,7 @@ const BrowsePhotographers = () => {
 
             <div className="filter-group">
               <label>Rating</label>
-              <select name="rating" value={filters.rating} onChange={handleFilterChange}>
+              <select name="rating" value={filters.rating} onChange={handleFilterChange} className="filter-select">
                 <option value="">Any Rating</option>
                 <option value="5">5 Stars</option>
                 <option value="4">4+ Stars</option>
@@ -210,6 +208,7 @@ const BrowsePhotographers = () => {
                 <div className="card-content">
                   <div className="photographer-header">
                     <h3 className="photographer-name">{photographer.userId.username}</h3>
+                    </div>
                     <div className="rating">
                       <div className="stars">
                         {[...Array(5)].map((_, i) => (
@@ -218,8 +217,7 @@ const BrowsePhotographers = () => {
                           </span>
                         ))}
                       </div>
-                      <span className="rating-text">({photographer.reviewCount || 0})</span>
-                    </div>
+                        <span className="rating-text">({photographer.reviewCount || 0})</span>
                   </div>
 
                   <p className="specialization">

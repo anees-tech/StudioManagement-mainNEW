@@ -34,7 +34,7 @@ const Navbar = ({ user, onLogout }) => {
   }
 
   const getDashboardLink = () => {
-    if (!user) return "/login"
+    if (!user || !user.role) return "/login"
 
     switch (user.role) {
       case "admin":
@@ -49,7 +49,7 @@ const Navbar = ({ user, onLogout }) => {
   }
 
   const getDashboardText = () => {
-    if (!user) return "Login"
+    if (!user || !user.role) return "Dashboard"
 
     switch (user.role) {
       case "admin":
@@ -107,19 +107,21 @@ const Navbar = ({ user, onLogout }) => {
           </div>
 
           <div className="navbar-actions">
-            {user ? (
+            {user && user.username ? (
               <div className="user-menu">
                 <div className="user-info">
                   <div className="user-avatar">
-                    {user.profileImage ? (
-                      <img src={user.profileImage || "/placeholder.svg"} alt={user.username} />
+                    {user?.profileImage ? (
+                      <img src={user.profileImage || "/placeholder.svg"} alt={user?.username || "User"} />
                     ) : (
-                      <div className="avatar-placeholder">{user.username.charAt(0).toUpperCase()}</div>
+                      <div className="avatar-placeholder">
+                        {user?.username ? user.username.charAt(0).toUpperCase() : "U"}
+                      </div>
                     )}
                   </div>
                   <div className="user-details">
-                    <span className="user-name">{user.username}</span>
-                    <span className="user-role">{user.role}</span>
+                    <span className="user-name">{user?.username || "User"}</span>
+                    <span className="user-role">{user?.role || "user"}</span>
                   </div>
                 </div>
 

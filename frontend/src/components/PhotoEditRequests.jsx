@@ -256,20 +256,20 @@ const PhotoEditRequests = ({ user }) => {
 
       {/* Create Request Modal */}
       {showCreateModal && (
-        <div className="modal-overlay">
-          <div className="modal photo-edit-modal">
-            <div className="modal-header">
+        <div className="photo-edit-modal-overlay">
+          <div className="photo-edit-modal photo-edit-create-modal">
+            <div className="photo-edit-modal-header">
               <h3>Create Photo Edit Request</h3>
               <button 
-                className="close-btn"
+                className="photo-edit-close-btn"
                 onClick={() => setShowCreateModal(false)}
               >
                 ✕
               </button>
             </div>
             
-            <form onSubmit={handleCreateRequest} className="modal-form">
-              <div className="form-group">
+            <form onSubmit={handleCreateRequest} className="photo-edit-modal-form">
+              <div className="photo-edit-form-group">
                 <label>Title *</label>
                 <input
                   type="text"
@@ -280,7 +280,7 @@ const PhotoEditRequests = ({ user }) => {
                 />
               </div>
               
-              <div className="form-group">
+              <div className="photo-edit-form-group">
                 <label>Description *</label>
                 <textarea
                   value={newRequest.description}
@@ -291,7 +291,7 @@ const PhotoEditRequests = ({ user }) => {
                 />
               </div>
               
-              <div className="form-group">
+              <div className="photo-edit-form-group">
                 <label>Upload Photos *</label>
                 <input
                   type="file"
@@ -311,8 +311,8 @@ const PhotoEditRequests = ({ user }) => {
                 )}
               </div>
               
-              <div className="form-row">
-                <div className="form-group">
+              <div className="photo-edit-form-row">
+                <div className="photo-edit-form-group">
                   <label>Priority</label>
                   <select
                     value={newRequest.priority}
@@ -325,7 +325,7 @@ const PhotoEditRequests = ({ user }) => {
                   </select>
                 </div>
                 
-                <div className="form-group">
+                <div className="photo-edit-form-group">
                   <label>Deadline (Optional)</label>
                   <input
                     type="date"
@@ -336,7 +336,7 @@ const PhotoEditRequests = ({ user }) => {
                 </div>
               </div>
               
-              <div className="form-group">
+              <div className="photo-edit-form-group">
                 <label>Additional Notes</label>
                 <textarea
                   value={newRequest.clientNotes}
@@ -346,7 +346,7 @@ const PhotoEditRequests = ({ user }) => {
                 />
               </div>
               
-              <div className="modal-actions">
+              <div className="photo-edit-modal-actions">
                 <button type="button" className="btn-secondary" onClick={() => setShowCreateModal(false)}>
                   Cancel
                 </button>
@@ -361,70 +361,99 @@ const PhotoEditRequests = ({ user }) => {
 
       {/* Details Modal */}
       {showDetailsModal && selectedRequest && (
-        <div className="modal-overlay">
-          <div className="modal details-modal">
-            <div className="modal-header">
-              <h3>{selectedRequest.title}</h3>
+        <div className="photo-edit-modal-overlay">
+          <div className="photo-edit-modal photo-edit-details-modal">
+            <div className="photo-edit-modal-header">
+              <div className="header-info">
+                <h3>{selectedRequest.title}</h3>
+                <div className="header-badges">
+                  <span className={`status-badge ${getStatusBadgeClass(selectedRequest.status)}`}>
+                    {selectedRequest.status.replace('_', ' ').toUpperCase()}
+                  </span>
+                  <span className={`priority-badge ${getPriorityBadgeClass(selectedRequest.priority)}`}>
+                    {selectedRequest.priority.toUpperCase()}
+                  </span>
+                </div>
+              </div>
               <button 
-                className="close-btn"
+                className="photo-edit-close-btn"
                 onClick={() => setShowDetailsModal(false)}
               >
                 ✕
               </button>
             </div>
             
-            <div className="modal-content">
+            <div className="photo-edit-modal-content">
               <div className="request-details-full">
+                
+                {/* Overview Section */}
+                <div className="detail-section overview-section">
+                  <h4>📋 Request Overview</h4>
+                  <div className="overview-grid">
+                    <div className="overview-item">
+                      <div className="overview-icon">📅</div>
+                      <div className="overview-details">
+                        <span className="overview-label">Created</span>
+                        <span className="overview-value">{new Date(selectedRequest.createdAt).toLocaleDateString()}</span>
+                      </div>
+                    </div>
+                    <div className="overview-item">
+                      <div className="overview-icon">💳</div>
+                      <div className="overview-details">
+                        <span className="overview-label">Payment Status</span>
+                        <span className={`overview-value payment-${selectedRequest.paymentStatus}`}>
+                          {selectedRequest.paymentStatus}
+                        </span>
+                      </div>
+                    </div>
+                    {selectedRequest.deadline && (
+                      <div className="overview-item">
+                        <div className="overview-icon">⏰</div>
+                        <div className="overview-details">
+                          <span className="overview-label">Deadline</span>
+                          <span className="overview-value">{new Date(selectedRequest.deadline).toLocaleDateString()}</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Description Section */}
                 <div className="detail-section">
-                  <h4>Request Information</h4>
-                  <div className="detail-grid">
-                    <div className="detail-item">
-                      <span className="label">Status:</span>
-                      <span className={`value status-badge ${getStatusBadgeClass(selectedRequest.status)}`}>
-                        {selectedRequest.status.replace('_', ' ')}
-                      </span>
-                    </div>
-                    <div className="detail-item">
-                      <span className="label">Priority:</span>
-                      <span className={`value priority-badge ${getPriorityBadgeClass(selectedRequest.priority)}`}>
-                        {selectedRequest.priority}
-                      </span>
-                    </div>
-                    <div className="detail-item">
-                      <span className="label">Payment:</span>
-                      <span className="value">{selectedRequest.paymentStatus}</span>
-                    </div>
-                    <div className="detail-item">
-                      <span className="label">Created:</span>
-                      <span className="value">{new Date(selectedRequest.createdAt).toLocaleString()}</span>
-                    </div>
+                  <h4>📝 Description</h4>
+                  <div className="description-content">
+                    <p>{selectedRequest.description}</p>
                   </div>
                 </div>
                 
-                <div className="detail-section">
-                  <h4>Description</h4>
-                  <p>{selectedRequest.description}</p>
-                </div>
-                
+                {/* Notes Sections */}
                 {selectedRequest.clientNotes && (
                   <div className="detail-section">
-                    <h4>Your Notes</h4>
-                    <p>{selectedRequest.clientNotes}</p>
+                    <h4>💭 Your Notes</h4>
+                    <div className="notes-content client-notes">
+                      <p>{selectedRequest.clientNotes}</p>
+                    </div>
                   </div>
                 )}
                 
+                {/* Photographer Section */}
                 {selectedRequest.photographerId && (
                   <div className="detail-section">
-                    <h4>Assigned Photographer</h4>
-                    <div className="photographer-info">
-                      <img 
-                        src={selectedRequest.photographerId.userId?.profileImage || '/placeholder-profile.jpg'} 
-                        alt="Photographer"
-                        className="photographer-avatar"
-                      />
-                      <div>
-                        <p className="photographer-name">{selectedRequest.photographerId.userId?.username}</p>
+                    <h4>📸 Assigned Photographer</h4>
+                    <div className="photographer-card">
+                      <div className="photographer-avatar-container">
+                        <img 
+                          src={selectedRequest.photographerId.userId?.profileImage || '/placeholder-profile.jpg'} 
+                          alt="Photographer"
+                          className="photographer-avatar"
+                        />
+                      </div>
+                      <div className="photographer-details">
+                        <h5 className="photographer-name">{selectedRequest.photographerId.userId?.username}</h5>
                         <p className="photographer-email">{selectedRequest.photographerId.userId?.email}</p>
+                        {selectedRequest.photographerId.specialization && (
+                          <p className="photographer-specialization">{selectedRequest.photographerId.specialization}</p>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -432,24 +461,32 @@ const PhotoEditRequests = ({ user }) => {
                 
                 {selectedRequest.photographerNotes && (
                   <div className="detail-section">
-                    <h4>Photographer Notes</h4>
-                    <p>{selectedRequest.photographerNotes}</p>
+                    <h4>🎨 Photographer Notes</h4>
+                    <div className="notes-content photographer-notes">
+                      <p>{selectedRequest.photographerNotes}</p>
+                    </div>
                   </div>
                 )}
                 
-                <div className="detail-section">
-                  <h4>Photos</h4>
+                {/* Photos Section */}
+                <div className="detail-section photos-main-section">
+                  <h4>🖼️ Photos ({selectedRequest.originalPhotos.length + selectedRequest.editedPhotos.length})</h4>
                   <div className="photos-section">
                     <div className="photo-group">
-                      <h5>Original Photos ({selectedRequest.originalPhotos.length})</h5>
+                      <div className="photo-group-header">
+                        <h5>📸 Original Photos</h5>
+                        <span className="photo-count">{selectedRequest.originalPhotos.length} photos</span>
+                      </div>
                       <div className="photo-grid">
                         {selectedRequest.originalPhotos.map((photo, index) => (
                           <div key={index} className="photo-item">
-                            <img 
-                              src={`http://localhost:5000/${photo.path.replace(/\\/g, '/')}`} 
-                              alt={photo.originalName}
-                              className="photo-thumbnail"
-                            />
+                            <div className="photo-container">
+                              <img 
+                                src={`http://localhost:5000/${photo.path.replace(/\\/g, '/')}`} 
+                                alt={photo.originalName}
+                                className="photo-thumbnail"
+                              />
+                            </div>
                             <p className="photo-name">{photo.originalName}</p>
                           </div>
                         ))}
@@ -457,24 +494,31 @@ const PhotoEditRequests = ({ user }) => {
                     </div>
                     
                     {selectedRequest.editedPhotos.length > 0 && (
-                      <div className="photo-group">
-                        <h5>Edited Photos ({selectedRequest.editedPhotos.length})</h5>
+                      <div className="photo-group edited-photos-group">
+                        <div className="photo-group-header">
+                          <h5>✨ Edited Photos</h5>
+                          <span className="photo-count">{selectedRequest.editedPhotos.length} photos</span>
+                        </div>
                         <div className="photo-grid">
                           {selectedRequest.editedPhotos.map((photo, index) => (
-                            <div key={index} className="photo-item">
-                              <img 
-                                src={`http://localhost:5000/${photo.path.replace(/\\/g, '/')}`} 
-                                alt={photo.originalName}
-                                className="photo-thumbnail"
-                              />
+                            <div key={index} className="photo-item edited-photo-item">
+                              <div className="photo-container">
+                                <img 
+                                  src={`http://localhost:5000/${photo.path.replace(/\\/g, '/')}`} 
+                                  alt={photo.originalName}
+                                  className="photo-thumbnail"
+                                />
+                                <div className="photo-overlay">
+                                  <a 
+                                    href={`http://localhost:5000/${photo.path.replace(/\\/g, '/')}`}
+                                    download={photo.originalName}
+                                    className="download-btn"
+                                  >
+                                    📥 Download
+                                  </a>
+                                </div>
+                              </div>
                               <p className="photo-name">{photo.originalName}</p>
-                              <a 
-                                href={`http://localhost:5000/${photo.path.replace(/\\/g, '/')}`}
-                                download={photo.originalName}
-                                className="download-btn"
-                              >
-                                Download
-                              </a>
                             </div>
                           ))}
                         </div>
@@ -483,15 +527,22 @@ const PhotoEditRequests = ({ user }) => {
                   </div>
                 </div>
                 
+                {/* Pricing Section */}
                 {(selectedRequest.estimatedCost > 0 || selectedRequest.finalCost > 0) && (
-                  <div className="detail-section">
-                    <h4>Pricing</h4>
-                    <div className="pricing-info">
+                  <div className="detail-section pricing-section">
+                    <h4>💰 Pricing Information</h4>
+                    <div className="pricing-grid">
                       {selectedRequest.estimatedCost > 0 && (
-                        <p>Estimated Cost: <span className="price">${selectedRequest.estimatedCost}</span></p>
+                        <div className="pricing-item estimated">
+                          <span className="pricing-label">Estimated Cost</span>
+                          <span className="pricing-value">${selectedRequest.estimatedCost}</span>
+                        </div>
                       )}
                       {selectedRequest.finalCost > 0 && (
-                        <p>Final Cost: <span className="price">${selectedRequest.finalCost}</span></p>
+                        <div className="pricing-item final">
+                          <span className="pricing-label">Final Cost</span>
+                          <span className="pricing-value final-price">${selectedRequest.finalCost}</span>
+                        </div>
                       )}
                     </div>
                   </div>
@@ -499,16 +550,16 @@ const PhotoEditRequests = ({ user }) => {
               </div>
             </div>
             
-            <div className="modal-actions">
+            <div className="photo-edit-modal-actions">
               {selectedRequest.status === 'completed' && selectedRequest.paymentStatus === 'pending' && (
                 <button 
-                  className="btn-primary"
+                  className="btn-primary payment-btn"
                   onClick={() => {
                     setShowDetailsModal(false)
                     handlePayment(selectedRequest._id)
                   }}
                 >
-                  Pay ${selectedRequest.finalCost}
+                  💳 Pay ${selectedRequest.finalCost}
                 </button>
               )}
               <button 

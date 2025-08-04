@@ -255,8 +255,8 @@
   margin-bottom: 1.5rem;
 }
 
-/* Modal Styles */
-.modal-overlay {
+/* Photographer Photo Edit Modal Styles */
+.photographer-photo-edit-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -270,7 +270,7 @@
   padding: 1rem;
 }
 
-.modal {
+.photographer-photo-edit-modal {
   background: white;
   border-radius: 12px;
   max-width: 600px;
@@ -280,15 +280,15 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-.details-modal {
+.photographer-photo-edit-details-modal {
   max-width: 800px;
 }
 
-.upload-modal {
+.photographer-photo-edit-upload-modal {
   max-width: 500px;
 }
 
-.modal-header {
+.photographer-photo-edit-modal-header {
   padding: 1.5rem;
   border-bottom: 1px solid #e5e7eb;
   display: flex;
@@ -296,14 +296,14 @@
   align-items: center;
 }
 
-.modal-header h3 {
+.photographer-photo-edit-modal-header h3 {
   font-size: 1.5rem;
   font-weight: 600;
   color: #1f2937;
   margin: 0;
 }
 
-.close-btn {
+.photographer-photo-edit-close-btn {
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -314,15 +314,15 @@
   transition: background-color 0.2s;
 }
 
-.close-btn:hover {
+.photographer-photo-edit-close-btn:hover {
   background: #f3f4f6;
 }
 
-.modal-content {
+.photographer-photo-edit-modal-content {
   padding: 1.5rem;
 }
 
-.modal-form {
+.photographer-photo-edit-modal-form {
   padding: 1.5rem;
 }
 
@@ -369,7 +369,7 @@
   margin-top: 0.25rem;
 }
 
-.modal-actions {
+.photographer-photo-edit-modal-actions {
   padding: 1.5rem;
   border-top: 1px solid #e5e7eb;
   display: flex;
@@ -552,7 +552,7 @@
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
   
-  .modal {
+  .photographer-photo-edit-modal {
     margin: 1rem;
     max-width: calc(100vw - 2rem);
   }
@@ -572,7 +572,7 @@
     margin: 0 -0.5rem;
   }
   
-  .modal-overlay {
+  .photographer-photo-edit-modal-overlay {
     padding: 0.5rem;
   }
   
